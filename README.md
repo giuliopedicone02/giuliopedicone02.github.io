@@ -1,3 +1,3 @@
 Sito personale creato a scopo didattico
 
-URL: giuliopedicone02.github.io
+URL: https://giuliopedicone02.github.io
