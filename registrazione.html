@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title>Registrazione</title>
+
+  <script type="text/javascript">
+    function verifica() {
+      if (document.registrazione.nome.value == "") {
+        alert("Si prega di inserire un nome");
+      }
+
+      else if (document.registrazione.cognome.value == "") {
+        alert("Si prega di inserire un cognome");
+      }
+
+      else if (document.registrazione.indirizzo.value == "") {
+        alert("Si prega di inserire un indirizzo");
+      }
+
+      else if (document.registrazione.citta.value == "") {
+        alert("Si prega di inserire una citta");
+      }
+
+      else if (document.registrazione.telefono.value == "") {
+        alert("Si prega di inserire un numero di telefono");
+      }
+
+      else if (document.registrazione.email.value == "") {
+        alert("Si prega di inserire una email");
+      }
+
+      else if (document.PDOinserimento.password.value == "") {
+        alert("Si prega di inserire una password");
+      }
+      else if (document.PDOinserimento.passwordRipeti.value == "") {
+        alert("Si prega di ripetere la password inserita");
+      }
+      else if (document.registrazione.password.value != document.registrazione.ripetiPassword.value) {
+        alert("Hai inserito 2 password diverse!");
+      }
+      else {
+        document.registrazione.submit();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="index.php"><img src="img/logo.jpg" alt="Logo"></img></a>
+    <h1> Dipartimento di Ingegneria Edile </h1>
+    <h4> Universit&agrave; degli Studi di Catania </h4>
+  </header>
+
+  <div style="overflow: auto">
+    <div class="menu">
+      <a href="index.php">HOME</a>
+      <a href="forum.php">FORUM</a>
+      <a href="contatti.php">CONTATTI</a>
+      <a href="accedi.php" id="accedi">ACCEDI</a>
+    </div>
+
+    <div class="left">
+
+    </div>
+
+    <div class="main">
+
+      <img src="img/sign-up.png" alt="Login" class="icon">
+
+      <h2 class="title">Registrazione</h2>
+      <h4 class="subtitle"> Inserisci i dati richiesti per continuare, <a href="accedi.php">oppure effettua
+          l'accesso</a></h4>
+
+      <form name="registrazione" action="registra.php" method="post" class="registration_form">
+        <div>
+          <p>Nome</p>
+          <input type="text" name="nome" placeholder="Nome" required>
+        </div>
+        <div>
+          <p>Cognome</p>
+          <input type="text" name="cognome" placeholder="Cognome" required>
+        </div>
+        <div>
+          <p>Indirizzo</p>
+          <input type="text" name="indirizzo" placeholder="Indirizzo" required>
+        </div>
+        <div>
+          <p>Citt&agrave;</p>
+          <input type="text" name="citta" placeholder="Citt&agrave;" required>
+        </div>
+        <div>
+          <p>Telefono</p>
+          <input type="number" name="telefono" placeholder="Telefono" required>
+        </div>
+        <div>
+          <p>Email</p>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div>
+          <p>Password</p>
+          <input type="password" name="password" placeholder="Password" minlength="8" required>
+        </div>
+        <div>
+          <p>Ripeti Password</p>
+          <input type="password" name="ripetiPassword" placeholder="Password" minlength="8" required>
+        </div>
+
+        <button type="reset" class="pulsanteAnnulla">Reset</button>
+        <button type="submit" class="pulsante" onclick="verifica()">Vai</button>
+      </form>
+    </div>
+
+    <div class="right">
+
+    </div>
+
+    <footer>
+      WebMaster: pedicone.giulio@itarchimede.it
+      <br /><br />
+      Seguici su:
+      <div class="social">
+        <a href="https://www.facebook.com/ingegneriacivilecatania/"><img src="img/facebook.png"></a>
+        <a href="https://www.instagram.com/dicar_didattica/"><img src="img/instagram.png"></a>
+        <a href="https://t.me/dicarnews"><img src="img/telegram.png"></a>
+        <a href="https://www.youtube.com/channel/UCbVwJ74-bJbiBB0uW65u4jw"><img src="img/youtube.png"></a>
+      </div>
+    </footer>
+</body>
+
+</html>
