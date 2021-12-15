@@ -57,6 +57,11 @@
 
             numero.push(n);
 
+            var audio = "audio/" + n + ".mp3";
+
+            var sintesiVocale = new Audio(audio);
+            sintesiVocale.play();
+
             el = "el" + n;
 
             document.getElementById(el).classList.remove("bg-standard");
