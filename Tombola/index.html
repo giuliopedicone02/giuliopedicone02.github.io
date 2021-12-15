@@ -115,11 +115,9 @@
     </script>
 </head>
 
-<body>
+<body onload="document.getElementById('genera').focus();">
 
     <p class="h1 text-center pt-5 pb-5 bg-danger text-white">Tombola Online</p>
-
-
 
     <div class="estrazioni col-9 pt-5 center text-center">
         <table class="table align-middle">
@@ -298,12 +296,17 @@
     </div>
 
     <div class="control-center text-center pt-5">
-        <input type="button" id='genera' onclick="generaNumero()" value="Genera Numero">
-        <input type="button" onclick="reset()" value="Reset">
+        <input type="button" id='genera' onclick="generaNumero()" value="Genera Numero"
+            class="btn-primary btn-lg pb-10">
+        <br /><br />
+        <input type="button" onclick="reset()" value="Reset" class="btn-danger">
     </div>
 
-    <p class="h1 pt-5 pb-3">Numeri Estratti:</p>
-    <p class="h3" id="numero"></p>
+    <div hidden>
+        <p class="h1 pt-5 pb-3">Numeri Estratti:</p>
+        <p class="h3" id="numero"></p>
+    </div>
+
 
 </body>
 
