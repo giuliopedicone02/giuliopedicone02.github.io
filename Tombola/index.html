@@ -27,6 +27,19 @@
     </style>
 
     <script type="text/javascript">
+
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
+
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Sure?';
+            }
+
+            // For Safari
+            return 'Sure?';
+        };
+
         var numero = [];
 
 
@@ -84,17 +97,19 @@
         }
 
         function reset() {
-            numero = [];
-            document.getElementById('numero').innerHTML = '';
-            document.getElementById('ultimoNumero').innerHTML = '';
-            document.getElementById('numeroPrecedente').innerHTML = '';
-            document.getElementById('genera').disabled = false;
+            if (confirm("Sei sicuro? Perderai tutti i numeri estratti finora!")) {
+                numero = [];
+                document.getElementById('numero').innerHTML = '';
+                document.getElementById('ultimoNumero').innerHTML = '';
+                document.getElementById('numeroPrecedente').innerHTML = '';
+                document.getElementById('genera').disabled = false;
 
-            for (c = 1; c <= 90; c++) {
-                el = "el" + c;
-                document.getElementById(el).classList.remove("bg-danger");
-                document.getElementById(el).classList.remove("text-white");
-                document.getElementById(el).classList.add("bg-standard");
+                for (c = 1; c <= 90; c++) {
+                    el = "el" + c;
+                    document.getElementById(el).classList.remove("bg-danger");
+                    document.getElementById(el).classList.remove("text-white");
+                    document.getElementById(el).classList.add("bg-standard");
+                }
             }
         }
     </script>
